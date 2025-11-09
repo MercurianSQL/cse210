@@ -25,7 +25,7 @@ class Program
         myResume._job.Add(job2);
 
         myResume.DisplayResume();
-        
+
         //Console.WriteLine("Hello World! This is the Resumes Project.");
     }
 }
