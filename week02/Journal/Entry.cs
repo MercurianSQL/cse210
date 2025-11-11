@@ -6,6 +6,8 @@ public class Entry // Represents a single journal entry.
 
     public void Display()
     {
-        // no return
+        Console.WriteLine(_dateTime);
+        Console.WriteLine(_journalPrompt);
+        Console.WriteLine(_userResponse);
     }
 }

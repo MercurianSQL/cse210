@@ -36,7 +36,7 @@ class Program
             }
             else
             {
-                if (guess > mNumber || guess < mNumber)
+                if (guess > mNumber || guess < mNumber) // || means "or"
                 {
                     guessAgain = "yes";
                 }
