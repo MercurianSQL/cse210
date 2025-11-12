@@ -16,17 +16,29 @@ public class Journal
         }
         else
         {
-            foreach (Entry entry in _userEntries)
+            foreach (Entry newEntry in _userEntries)
             {
-                entry.Display();
+                newEntry.Display();
             }
         }
     }
-    public void SaveToFile(string file)
+    public void SaveToFile(string filename)
     {
-        // no return
+        using (StreamWriter outputFile = new StreamWriter(filename))
+        {
+            foreach (Entry newEntry in _userEntries) //not ._userEntries. no dot
+            {
+                newEntry.Display();
+                {
+                    outputFile.WriteLine(newEntry._dateTime); //do add ._here uses dot
+                    outputFile.WriteLine(newEntry._journalPrompt);
+                    outputFile.WriteLine(newEntry._userResponse);
+                    outputFile.WriteLine();
+                }
+            }
+        }
     }
-    public void LoadFromFile(string file)
+    public void LoadFromFile(string filename)
     {
         // no return
     }

@@ -7,7 +7,6 @@ class Program  // only containing a few static methods
     static string letter = "";
     static void Main(string[] args)
     {
-        Journal theJournal = new Journal();
         Entry AddEntry = new Entry();
         int actionInt = 0;
         Console.WriteLine("Welcome to the Journal Program!");
@@ -50,24 +49,30 @@ class Program  // only containing a few static methods
                 myJournal.DisplayAll();
             }
 
-            else if (actionInt == 3)
+            else if (actionInt == 3)//Load journal entries from a file
             {
                 letter = "C";
             }
 
-            else if (actionInt == 4)
+            else if (actionInt == 4)//Save journal entries to a file
             {
-                letter = "D";
+                Console.WriteLine($"DEBUG: actionInt is {actionInt}"); //PASSED
+                Console.WriteLine("Enter a filename for your journal: ");
+                string filename = Console.ReadLine();
+                filename += ".txt";
+                myJournal.SaveToFile(filename);
+                Console.WriteLine("Journal saved to " + filename);
             }
 
-            else if (actionInt == 5)
+            else if (actionInt == 5)//Quit
             {
                 Console.WriteLine("See you tomorrow!");
             }
 
             else
             {
-                letter = "F";
+                Console.WriteLine("That number is not a valid action. Please choose a number from 1 to 5.");
+                //add a string exception later
             }
 
             Console.WriteLine(letter);
