@@ -40,6 +40,15 @@ public class Journal
     }
     public void LoadFromFile(string filename)
     {
-        // no return
+        Console.WriteLine("Loading journal from file " + filename);
+
+        string[] journalEntries = File.ReadAllLines(filename);
+
+        foreach (string line in journalEntries)
+        {
+            Console.WriteLine(line);
+        }
+        //This code only allows user to read previous entries. 
+        //TODO figure how to load previous entries into _userEntries list.
     }
 }

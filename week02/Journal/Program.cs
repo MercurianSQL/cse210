@@ -51,12 +51,15 @@ class Program  // only containing a few static methods
 
             else if (actionInt == 3)//Load journal entries from a file
             {
-                letter = "C";
+                Console.WriteLine("Enter the filename of your journal: ");
+                string filename = Console.ReadLine();
+                filename += ".txt";
+                myJournal.LoadFromFile(filename);
+                Console.WriteLine("Journal loaded from " + filename);
             }
 
             else if (actionInt == 4)//Save journal entries to a file
             {
-                Console.WriteLine($"DEBUG: actionInt is {actionInt}"); //PASSED
                 Console.WriteLine("Enter a filename for your journal: ");
                 string filename = Console.ReadLine();
                 filename += ".txt";
