@@ -1,5 +1,5 @@
-using System;
-
+// Exceeds: Allows user to name their own journal file when saving.
+// Exceeds: Increased number of journal prompts.
 class Program  // only containing a few static methods
 {
     static Journal myJournal = new Journal();
