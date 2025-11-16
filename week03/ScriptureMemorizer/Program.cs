@@ -1,12 +1,7 @@
 using System;
 
 class Program
-//Class OBJECT = new Class("string")
-//aka Object == Instance, Entitity, Component
-/*Word milk = new Word("Milk");
-Word eggs = new Word("Eggs");
-Scripture shoppingList = new Scripture("Groceries", "Milk Eggs Bread Butter");
-Here: milk, eggs, and shoppingList are objects.*/
+
 {
     static void Main(string[] args)
     {

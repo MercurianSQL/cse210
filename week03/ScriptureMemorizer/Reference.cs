@@ -16,7 +16,7 @@ class Reference
         _multiVerse = multiverse;
     }
 
-    //Get-Set
+    //properties
     public string GetDisplayTextReference()
     {
         return $"{_book} {_chapter}:{_verse}{_multiVerse}";
