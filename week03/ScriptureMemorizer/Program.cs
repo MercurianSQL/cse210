@@ -5,9 +5,10 @@ class Program
 {
     static void Main(string[] args)
     {
-        Scripture mytext = new Scripture("2 Nephi 25:26\n", "And we talk of Christ, we rejoice in Christ, we preach of Christ,\n we prophesy of Christ, and we write according to our prophecies,\n that our children may know to what source they may look for a remission of their sins.\n");
+        Scripture mytext = new Scripture("2 Nephi 25:26", "And we talk of Christ, we rejoice in Christ, we preach of Christ,\n we prophesy of Christ, and we write according to our prophecies,\n that our children may know to what source they may look for a remission of their sins.\n");
         Console.WriteLine(mytext.GetDisplayTextScripture());
         bool quit = false;
+        //TESTED with "2 Nephi 25:26-27", PASS
 
         while (quit == false)
         {
