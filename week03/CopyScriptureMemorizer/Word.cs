@@ -24,7 +24,7 @@ class Word
     //Get the green car Set paint color to blue.
     public string GetDisplayTextWord()
     {
-        return Show();
+        return "Word <List>";
     }
 
     //methods:
@@ -32,20 +32,12 @@ class Word
     //ex: drive the green car into the bay, drive the blue car out of the bay
     public void Hide()
     {
-        _isHidden = true;
+            //code to hide the word
     }
 
-    public string Show()
+    public void Show()
     {
-        if (_isHidden)
-        {
-            return new string('_', _text.Length);
-            //I would have looped through the word, this is much easier. 
-        }
-        else
-        {
-            return _text;
-        }
+            //code to show the word
     }
     
     public bool IsHidden()

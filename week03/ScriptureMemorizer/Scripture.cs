@@ -1,42 +1,67 @@
 class Scripture
 {
-    //class variables (aka: Fields): 
     // Ruberic: must all be PRIVATE
     private string _reference;
     private List<Word> _words;
 
 
-    // AllInTitleCase: 1) constructors, 2) Get-Set, 3) methods 
-
-    //constructor: SETs initial values. NO return, but dont set to void.
-    //ex: the car is painted green
     public Scripture(string scriptureReference, string scriptureText)
     {
-        _reference = //GetDisplayTextReference();
+        _reference = scriptureReference;
 
         _words = new List<Word>();
-        //foreach?
-    }
-    //Get-Set: 
-    //get or change the values of PRIVATE Fields
-    //returns a value or VOID (usually void)
-    //ex: repaint the car; 
-    //cannot ask the cust what color, only read the work order
-    //Get the green car Set paint color to blue.
-    public string GetDisplayTextScripture()
-    {
-        return $"{_reference} {_words}";
+        {
+            foreach (string word in scriptureText.Split(' ')) //string bc w is a string not an object
+            {
+                _words.Add(new Word(word));
+            }
+        }
     }
 
-    //methods:
-    //ActionVerbs: do things to or with the Fields (drive the car, paint the car)
-    //ex: drive the green car into the bay, drive the blue car out of the bay
-    HideRandomWords()
+
+    public string GetDisplayTextScripture()
     {
-        //code to hide random words
+        string display = _reference + " ";
+
+        foreach (Word w in _words)
+        {
+            display += w.Show() + " ";
+        }
+        return display; //display.Trim(); if needed
     }
-    IsCompletelyHidden()
+
+
+    public int HideRandomWords()
     {
-        //code to check if all words are hidden
+        int remaining = _words.Count(w => !w.IsHidden());
+        int numberToHide = Math.Min(3, remaining);
+        {
+            for (int i = 0; i < numberToHide; i++)
+            {
+                int index = Random.Shared.Next(0, _words.Count);
+                if (_words[index].IsHidden())
+                {
+                    i--;
+                    continue;
+                }
+                else
+                {
+                    _words[index].Hide();
+                }
+            }
+            return numberToHide;
+        }
+    }
+    public bool IsCompletelyHidden()
+    {
+        foreach (Word w in _words)
+        {
+            if (!w.IsHidden()) 
+            //logic: if ANY word is NOT hidden is easier to code; than if ALL words are hidden
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }
